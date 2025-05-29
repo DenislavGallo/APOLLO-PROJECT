@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="/static/css/led-loader.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo - Informazioni</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/landing.css">
+    <link rel="stylesheet" href="../static/css/info-effects.css">
+    <!-- Font Awesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container section-scroll">
+        {% include "navbar.html" %}
+
+        <!-- Main content -->
+        <main class="info-content">
+            <div class="info-header ai-inspired">
+                <!-- Sfondo tecnologico AI -->
+                <div class="ai-bg">
+                    <div class="glow-circle c1"></div>
+                    <div class="glow-circle c2"></div>
+                    <div class="glow-dots"></div>
+                </div>
+                
+                <!-- Cerchio con satellite -->
+                <div class="ai-orbit">
+                    <div class="orbit-track"></div>
+                    <div class="orbit-core"></div>
+                    <div class="satellite-wrapper">
+                        <div class="orbit-satellite"></div>
+                    </div>
+                    <div class="orbit-glow"></div>
+                </div>
+                
+                <div class="ai-text-container">
+                    <h2>Progetto Apollo</h2>
+                    <p class="subtitle">Visualizzazione Predittiva COVID-19 con Intelligenza Artificiale</p>
+                </div>
+            </div>
+            
+            <div class="info-sections">
+                <section class="info-section about-section">
+                    <div class="section-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="section-content">
+                        <h3>Apollo: Visione e Missione</h3>
+                        <p>Apollo è una piattaforma web interattiva progettata per trasformare il modo in cui visualizziamo e comprendiamo la diffusione delle malattie infettive. Superando i tradizionali grafici e tabelle, Apollo fornisce una rappresentazione dinamica e geospaziale dell'andamento epidemico, rendendo accessibili e intuitivi i risultati complessi dei modelli predittivi basati sull'Intelligenza Artificiale.</p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-globe"></i>
+                                <h4>Globo 3D Interattivo</h4>
+                                <p>Visualizzazione geospaziale dei dati con punti di contagio posizionati sui paesi</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-brain"></i>
+                                <h4>Modelli AI Avanzati</h4>
+                                <p>Previsioni basate su algoritmi di Machine Learning addestrati su dati storici</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <h4>Analisi Dati Completa</h4>
+                                <p>Statistiche dettagliate e visualizzazioni intuitive sull'andamento epidemico</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <h4>Dashboard Moderna</h4>
+                                <p>Interfaccia elegante e reattiva con visualizzazioni in tempo reale</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="info-section tech-section">
+                    <div class="section-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="section-content">
+                        <h3>Tecnologie Utilizzate</h3>
+                        <p>Apollo integra tecnologie all'avanguardia per creare un'esperienza utente fluida e informativa, combinando visualizzazioni 3D interattive con modelli di AI potenti.</p>
+                        
+                        <div class="tech-columns">
+                            <div class="tech-column">
+                                <h4><i class="fas fa-laptop-code"></i> Frontend</h4>
+                                <ul class="tech-list">
+                                    <li><i class="fab fa-html5"></i> HTML5 semantico</li>
+                                    <li><i class="fab fa-css3-alt"></i> CSS3 con animazioni</li>
+                                    <li><i class="fab fa-js"></i> JavaScript ES6+</li>
+                                    <li><i class="fas fa-cube"></i> Three.js per visualizzazione 3D</li>
+                                    <li><i class="fas fa-chart-pie"></i> Chart.js per grafici</li>
+                                </ul>
+                            </div>
+                            <div class="tech-column">
+                                <h4><i class="fas fa-server"></i> Backend</h4>
+                                <ul class="tech-list">
+                                    <li><i class="fab fa-python"></i> Python 3.8+</li>
+                                    <li><i class="fab fa-flask"></i> Flask web framework</li>
+                                    <li><i class="fas fa-database"></i> Pandas per gestione dati</li>
+                                    <li><i class="fas fa-robot"></i> Prophet (Meta) per previsioni</li>
+                                    <li><i class="fas fa-vial"></i> Scikit-learn per metriche</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="info-section project-data-section">
+                    <div class="section-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="section-content">
+                        <h3>Dati e Metodologia</h3>
+                        <p>I dati utilizzati per addestrare i modelli di previsione provengono dal <strong>repository ufficiale della Protezione Civile Italiana</strong>, che raccoglie e pubblica dati quotidiani sull'andamento dell'epidemia COVID-19 in Italia.</p>
+                        
+                        <div class="methodology-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Acquisizione e Preprocessing</h4>
+                                    <p>Raccolta dei dati storici, pulizia e trasformazione in formato adatto al modello</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Addestramento Modello</h4>
+                                    <p>Utilizzo del framework Prophet con ottimizzazioni per catturare stagionalità e trend</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Validazione e Metriche</h4>
+                                    <p>Test su dati storici con valutazione tramite MAPE, RMSE e altre metriche</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Visualizzazione Interattiva</h4>
+                                    <p>Trasformazione delle previsioni in visualizzazioni 3D e grafici interattivi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="info-section author-section">
+                    <div class="section-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="section-content">
+                        <h3>Autore e Ringraziamenti</h3>
+                        <div class="author-info" style="display: flex; gap: 2.5rem; flex-wrap: wrap;">
+    <div class="author-avatar-block" style="display: flex; align-items: center; gap: 1.1rem;">
+        <div class="author-avatar">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="author-details">
+            <h4>Denislav Gallo</h4>
+            <p class="author-title">Progetto per l'Esame di Stato 2025</p>
+            <p class="author-description">Questo progetto è stato realizzato come dimostrazione delle capacità di integrare modelli di AI con visualizzazioni dati moderne e interattive, applicandole a un caso reale di rilevanza globale.</p>
+        </div>
+    </div>
+    <div class="author-avatar-block" style="display: flex; align-items: center; gap: 1.1rem;">
+        <div class="author-avatar">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="author-details">
+            <h4>Davide Rivarossa</h4>
+            <p class="author-title">Collaborazione allo sviluppo e testing</p>
+            <p class="author-description">Ha contribuito allo sviluppo, al debug e al collaudo della piattaforma, apportando idee e miglioramenti all'esperienza utente e alle funzionalità.</p>
+        </div>
+    </div>
+</div>                        
+                        <div class="acknowledgments">
+                            <h4><i class="fas fa-award"></i> Ringraziamenti</h4>
+                            <ul>
+                                <li>Protezione Civile Italiana per l'accesso ai dati</li>
+                                <li>Meta (Facebook) per il framework Prophet</li>
+                                <li>Docenti dell'istituto per la guida e il supporto</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="contact-section">
+                <h3><i class="fas fa-envelope"></i> Contatti e Feedback</h3>
+                <p>Per informazioni, suggerimenti o segnalazioni relative al progetto, è possibile utilizzare il modulo sottostante o contattare direttamente l'autore.</p>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" placeholder="Il tuo nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="La tua email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" rows="4" placeholder="Il tuo messaggio o feedback"></textarea>
+                    </div>
+                    <button type="button" class="submit-button">
+                        <i class="fas fa-paper-plane"></i> Invia Messaggio
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../static/js/data.js"></script>
+    <script src="../static/js/landing.js"></script>
+    <script src="../static/js/info-effects.js"></script>
+    {% include "footer.html" %}
+</body>
+</html>

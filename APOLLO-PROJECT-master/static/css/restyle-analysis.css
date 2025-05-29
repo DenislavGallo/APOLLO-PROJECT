@@ -1,0 +1,146 @@
+/* Restyle Analisi Algoritmica */
+.analysis-row.restyled-analysis {
+  display: flex;
+  gap: 2.2rem;
+  margin-bottom: 2.2rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.analysis-card {
+  background: linear-gradient(135deg, #23283a 60%, #1a1f2b 100%);
+  box-shadow: 0 4px 24px #3894ff22;
+  border-radius: 16px;
+  padding: 2.2rem 1.7rem;
+  min-width: 320px;
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.analysis-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.analysis-header i {
+  font-size: 2.5rem;
+  color: #3894ff;
+  filter: drop-shadow(0 0 8px #3894ff66);
+}
+.analysis-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg,#3894ff,#56d364);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+.analysis-body ul {
+  margin: 1.1rem 0 1.1rem 1.1rem;
+  padding-left: 0;
+  list-style: none;
+}
+.analysis-body ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #56d364;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  font-size: 1.08rem;
+}
+.analysis-body ul li i {
+  color: #56d364;
+  font-size: 1.1rem;
+}
+.analysis-body p {
+  color: #e6edf3;
+  margin-bottom: 0.7rem;
+}
+.analysis-chart-card {
+  background: rgba(33, 38, 58, 0.85);
+}
+
+/* Canvas Rt responsive e grande */
+.fullsize-rt-chart {
+  display: block;
+  width: 98%;
+  height: 340px;
+  min-width: 300px;
+  min-height: 220px;
+  max-width: 99%;
+  max-height: 420px;
+  margin: 0 auto 0.7rem auto;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.analysis-chart-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #3894ff22;
+  padding: 1.4rem 1.2rem 1.2rem 1.2rem;
+  min-width: 340px;
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.analysis-chart-card canvas {
+  width: 100% !important;
+  max-width: 99%;
+  min-width: 240px;
+  min-height: 220px;
+  height: 340px;
+  margin-bottom: 0.9rem;
+}
+
+.analysis-chart-card .chart-caption {
+  color: #8b949e;
+  font-size: 0.98rem;
+  text-align: center;
+  margin-top: 0.3rem;
+}
+/* Bottone Filtra Dati - Effetto Hover Moderno */
+#update-stats.action-button {
+  background: linear-gradient(90deg, #3894ff 60%, #56d364 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 0.68rem 1.7rem;
+  box-shadow: 0 0 0 rgba(56,148,255,0.2);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.35s cubic-bezier(.6,1.7,.5,1),
+              box-shadow 0.3s cubic-bezier(.6,1.7,.5,1),
+              transform 0.18s cubic-bezier(.7,2,.2,.9);
+  position: relative;
+  overflow: hidden;
+}
+#update-stats.action-button:hover,
+#update-stats.action-button:focus {
+  background: linear-gradient(90deg, #56d364 60%, #3894ff 100%);
+  color: #fff;
+  box-shadow: 0 0 12px 2px #56d36499, 0 0 32px 8px #3894ff33;
+  transform: scale(1.045) translateY(-2px);
+}
+#update-stats.action-button:active {
+  transform: scale(0.97) translateY(1px);
+  box-shadow: 0 0 6px 2px #3894ff55;
+}
+
+@media (max-width: 900px) {
+  .analysis-row.restyled-analysis {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .analysis-card, .analysis-chart-card {
+    min-width: 0;
+    width: 100%;
+  }
+}

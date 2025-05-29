@@ -1,0 +1,30 @@
+2025-05-29 11:33:01,030 - apollo-init-db - INFO - Verifica connessione al database MongoDB...
+2025-05-29 11:33:01,055 - apollo-db-manager - INFO - Connessione a MongoDB stabilita con successo: mongodb://localhost:27017/, DB: apollo_covid_db
+2025-05-29 11:33:01,056 - apollo-db-manager - INFO - Indici MongoDB creati o verificati
+2025-05-29 11:33:01,057 - apollo-init-db - INFO - Connessione al database MongoDB riuscita!
+2025-05-29 11:33:01,057 - apollo-init-db - INFO - Inizio importazione dati alle 11:33:01
+2025-05-29 11:33:01,057 - apollo-datautils - INFO - Utilizzo del file dati storici regionali locale: C:\APOLLO-PROJECT-master\server\data_cache\dpc-covid19-ita-regioni.csv
+2025-05-29 11:33:01,057 - apollo-datautils - INFO - Utilizzo del file dati storici provinciali locale: C:\APOLLO-PROJECT-master\server\data_cache\dpc-covid19-ita-province.csv
+2025-05-29 11:33:01,900 - apollo-datautils - INFO - Importazione dati nazionali completata: 1781 record elaborati
+2025-05-29 11:33:01,901 - apollo-datautils - INFO - Risultato: 1781 inseriti, 0 aggiornati
+2025-05-29 11:33:17,626 - apollo-datautils - INFO - Importazione dati regionali completata: 37401 record elaborati
+2025-05-29 11:33:17,626 - apollo-datautils - INFO - Risultato: 0 inseriti, 37401 aggiornati
+2025-05-29 11:35:11,762 - apollo-datautils - INFO - Importazione dati provinciali completata: 262807 record elaborati
+2025-05-29 11:35:11,762 - apollo-datautils - INFO - Risultato: 0 inseriti, 262807 aggiornati
+2025-05-29 11:35:11,878 - apollo-init-db - INFO - Importazione completata!
+2025-05-29 11:35:11,879 - apollo-init-db - INFO - Risultati dati NAZIONALI:
+2025-05-29 11:35:11,879 - apollo-init-db - INFO -   Successo: True
+2025-05-29 11:35:11,879 - apollo-init-db - INFO -   Inseriti: 1781
+2025-05-29 11:35:11,879 - apollo-init-db - INFO -   Aggiornati: 0
+2025-05-29 11:35:11,879 - apollo-init-db - INFO -   Errori: 0
+2025-05-29 11:35:11,879 - apollo-init-db - INFO - Risultati dati REGIONALI:
+2025-05-29 11:35:11,880 - apollo-init-db - INFO -   Successo: True
+2025-05-29 11:35:11,880 - apollo-init-db - INFO -   Inseriti: 0
+2025-05-29 11:35:11,880 - apollo-init-db - INFO -   Aggiornati: 37401
+2025-05-29 11:35:11,880 - apollo-init-db - INFO -   Errori: 0
+2025-05-29 11:35:11,880 - apollo-init-db - INFO - Risultati dati PROVINCIALI:
+2025-05-29 11:35:11,880 - apollo-init-db - INFO -   Successo: True
+2025-05-29 11:35:11,880 - apollo-init-db - INFO -   Inseriti: 0
+2025-05-29 11:35:11,880 - apollo-init-db - INFO -   Aggiornati: 262807
+2025-05-29 11:35:11,881 - apollo-init-db - INFO -   Errori: 0
+2025-05-29 11:35:11,881 - apollo-init-db - INFO - Tempo totale: 130.82 secondi

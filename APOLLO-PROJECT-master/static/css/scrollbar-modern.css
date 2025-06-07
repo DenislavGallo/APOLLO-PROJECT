@@ -1,0 +1,30 @@
+/* Scrollbar stile moderno, visibile su tutte le sezioni principali */
+::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(18,24,38,0.25);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(120deg, #3894ff 40%, #4bc0c0 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(56,148,255,0.10);
+    transition: background 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(120deg, #62abff 0%, #56d364 100%);
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #3894ff #161b22;
+}
+
+/* Scrollbar interna alle card o sezioni scorrevoli */
+.section-scroll {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #3894ff #161b22;
+}

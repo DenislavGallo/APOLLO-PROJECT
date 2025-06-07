@@ -1,0 +1,165 @@
+/* Virus Loader Animation */
+.virus-loader {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 10, 25, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+  overflow: hidden;
+}
+
+.virus-loader.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Nucleo del virus */
+.virus-core {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(255, 87, 34, 0.8) 0%, rgba(255, 36, 0, 0.9) 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px #ff5722, 0 0 60px #ff2400;
+    position: relative;
+    animation: core-pulse 3s infinite;
+    filter: url(#gooey);
+    z-index: 10;
+}
+
+/* Fluido interno core */
+.virus-fluid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(255, 160, 0, 0.7) 0%, rgba(255, 87, 34, 0.5) 100%);
+    border-radius: 45%;
+    mix-blend-mode: screen;
+    animation: fluid-morph 8s infinite alternate ease-in-out;
+}
+
+/* Effetto goccia filtro SVG */
+.virus-svg-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+}
+
+/* Contenitore per gocce */
+.virus-drops-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    filter: url(#gooey);
+    z-index: 8;
+}
+
+/* Gocce singole */
+.virus-drop {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 87, 34, 0.9) 0%, rgba(255, 36, 0, 0.8) 90%);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 87, 34, 0.6);
+    transform-origin: center;
+    z-index: 5;
+}
+
+/* Tentacoli del virus */
+.virus-tentacle {
+    position: absolute;
+    width: 8px;
+    background: linear-gradient(to top, transparent, rgba(255, 87, 34, 0.6), rgba(255, 36, 0, 0.8));
+    border-radius: 8px;
+    transform-origin: 50% 0;
+    z-index: 4;
+}
+
+.virus-tentacle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, rgba(255, 87, 34, 0.8) 0%, rgba(255, 36, 0, 0.6) 90%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.4);
+}
+
+/* Messaggi di stato con effetto typescript */
+.virus-message {
+    margin-top: 40px;
+    font-family: 'Courier New', monospace;
+    color: #ff5722;
+    font-size: 1.1rem;
+    text-align: center;
+    opacity: 0.9;
+    text-shadow: 0 0 5px rgba(255, 87, 34, 0.6);
+    min-height: 1.5em;
+    position: relative;
+}
+
+.virus-message::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    animation: blink 1s infinite;
+}
+
+/* Barra di progresso avanzata */
+.virus-progress-container {
+    margin-top: 30px;
+    width: 300px;
+    height: 6px;
+    background-color: rgba(255, 87, 34, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.virus-progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, #ff2400, #ff5722);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.8);
+    position: relative;
+    overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #ff5500;
+  box-shadow: 0 0 10px #ff3800;
+  transition: width 0.3s ease-out;
+}
+
+/* Messages that appear as infection progresses */
+.infection-message {
+  position: absolute;
+  font-family: monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 5px rgba(255, 56, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}

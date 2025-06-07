@@ -1,0 +1,24 @@
+# Dipendenze Python per Apollo Project
+
+# Server Web
+flask==2.2.3
+gunicorn==20.1.0
+
+# Data Processing
+pandas==1.5.3
+numpy==1.24.2
+
+# ML Model
+prophet==1.1.2
+scikit-learn==1.2.2
+
+# Database
+pymongo==4.3.3
+dnspython==2.3.0
+
+# Utilities
+pystan==2.19.1.1  # Versione specifica compatibile con Prophet
+plotly==5.13.1     # Per visualizzazioni
+matplotlib==3.7.1  # Per grafici
+redis==5.0.1  # Per la cache Redis
+minio==7.2.5  # Per object storage MinIO

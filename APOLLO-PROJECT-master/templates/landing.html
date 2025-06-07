@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="/static/css/led-loader.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo - Visualizzazione Predittiva COVID-19</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/landing.css">
+    <!-- Font Awesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Background animation -->
+        <div class="wave-background">
+            <canvas id="wave-canvas"></canvas>
+        </div>
+        
+        <!-- Main content -->
+        <div class="landing-content">
+            <div class="project-logo">
+                <div class="info-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h1 class="apollo-title">Progetto Apollo</h1>
+                <p class="subtitle">Visualizzazione Predittiva COVID-19 con Intelligenza Artificiale</p>
+            </div>
+            
+            <div class="globe-container">
+                <canvas id="orbit-globe"></canvas>
+            </div>
+            
+            <div class="enter-button-container">
+                <a href="/" class="enter-button">
+                    <span>Esplora la Piattaforma</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="../static/js/landing.js"></script>
+</body>
+</html>

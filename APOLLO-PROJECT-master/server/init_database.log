@@ -1,0 +1,72 @@
+2025-05-16 12:53:26,265 - apollo-init-db - INFO - Verifica connessione al database MongoDB...
+2025-05-16 12:53:26,292 - apollo-db-manager - INFO - Connessione a MongoDB stabilita con successo: mongodb://localhost:27017/, DB: apollo_covid_db
+2025-05-16 12:53:26,361 - apollo-db-manager - INFO - Indici MongoDB creati o verificati
+2025-05-16 12:53:26,361 - apollo-init-db - INFO - Connessione al database MongoDB riuscita!
+2025-05-16 12:53:26,361 - apollo-init-db - INFO - Verifica completata. Il database è raggiungibile.
+2025-05-16 12:53:34,625 - apollo-init-db - INFO - Verifica connessione al database MongoDB...
+2025-05-16 12:53:34,636 - apollo-db-manager - INFO - Connessione a MongoDB stabilita con successo: mongodb://localhost:27017/, DB: apollo_covid_db
+2025-05-16 12:53:34,637 - apollo-db-manager - INFO - Indici MongoDB creati o verificati
+2025-05-16 12:53:34,638 - apollo-init-db - INFO - Connessione al database MongoDB riuscita!
+2025-05-16 12:53:34,638 - apollo-init-db - INFO - Inizio importazione dati alle 12:53:34
+2025-05-16 12:53:34,638 - apollo-datautils - INFO - Download dei dati storici regionali...
+2025-05-16 12:53:37,838 - apollo-datautils - INFO - Download dei dati storici provinciali...
+2025-05-16 12:53:56,502 - apollo-datautils - INFO - Importazione dati regionali completata: 37401 record elaborati
+2025-05-16 12:53:56,503 - apollo-datautils - INFO - Risultato: 37401 inseriti, 0 aggiornati
+2025-05-16 12:55:42,399 - apollo-datautils - INFO - Importazione dati provinciali completata: 262807 record elaborati
+2025-05-16 12:55:42,400 - apollo-datautils - INFO - Risultato: 194007 inseriti, 68800 aggiornati
+2025-05-16 12:55:42,482 - apollo-init-db - INFO - Importazione completata!
+2025-05-16 12:55:42,482 - apollo-init-db - INFO - Risultati dati REGIONALI:
+2025-05-16 12:55:42,482 - apollo-init-db - INFO -   Successo: True
+2025-05-16 12:55:42,483 - apollo-init-db - INFO -   Inseriti: 37401
+2025-05-16 12:55:42,483 - apollo-init-db - INFO -   Aggiornati: 0
+2025-05-16 12:55:42,483 - apollo-init-db - INFO -   Errori: 0
+2025-05-16 12:55:42,483 - apollo-init-db - INFO - Risultati dati PROVINCIALI:
+2025-05-16 12:55:42,483 - apollo-init-db - INFO -   Successo: True
+2025-05-16 12:55:42,483 - apollo-init-db - INFO -   Inseriti: 194007
+2025-05-16 12:55:42,483 - apollo-init-db - INFO -   Aggiornati: 68800
+2025-05-16 12:55:42,483 - apollo-init-db - INFO -   Errori: 0
+2025-05-16 12:55:42,483 - apollo-init-db - INFO - Tempo totale: 127.85 secondi
+2025-05-16 12:55:42,488 - apollo-datautils - INFO - Recuperate 21 regioni dal database
+2025-05-16 12:55:42,488 - apollo-init-db - INFO - Regioni disponibili (21):
+2025-05-16 12:55:42,552 - apollo-datautils - INFO - Recuperate 4 province dal database
+2025-05-16 12:55:42,552 - apollo-init-db - INFO -   - Abruzzo (4 province)
+2025-05-16 12:55:42,671 - apollo-datautils - INFO - Recuperate 2 province dal database
+2025-05-16 12:55:42,671 - apollo-init-db - INFO -   - Basilicata (2 province)
+2025-05-16 12:55:42,815 - apollo-datautils - INFO - Recuperate 5 province dal database
+2025-05-16 12:55:42,816 - apollo-init-db - INFO -   - Calabria (5 province)
+2025-05-16 12:55:42,920 - apollo-datautils - INFO - Recuperate 5 province dal database
+2025-05-16 12:55:42,920 - apollo-init-db - INFO -   - Campania (5 province)
+2025-05-16 12:55:43,031 - apollo-datautils - INFO - Recuperate 9 province dal database
+2025-05-16 12:55:43,031 - apollo-init-db - INFO -   - Emilia-Romagna (9 province)
+2025-05-16 12:55:43,199 - apollo-datautils - INFO - Recuperate 4 province dal database
+2025-05-16 12:55:43,200 - apollo-init-db - INFO -   - Friuli Venezia Giulia (4 province)
+2025-05-16 12:55:43,332 - apollo-datautils - INFO - Recuperate 5 province dal database
+2025-05-16 12:55:43,332 - apollo-init-db - INFO -   - Lazio (5 province)
+2025-05-16 12:55:43,449 - apollo-datautils - INFO - Recuperate 4 province dal database
+2025-05-16 12:55:43,449 - apollo-init-db - INFO -   - Liguria (4 province)
+2025-05-16 12:55:43,578 - apollo-datautils - INFO - Recuperate 12 province dal database
+2025-05-16 12:55:43,578 - apollo-init-db - INFO -   - Lombardia (12 province)
+2025-05-16 12:55:43,691 - apollo-datautils - INFO - Recuperate 5 province dal database
+2025-05-16 12:55:43,691 - apollo-init-db - INFO -   - Marche (5 province)
+2025-05-16 12:55:43,792 - apollo-datautils - INFO - Recuperate 2 province dal database
+2025-05-16 12:55:43,792 - apollo-init-db - INFO -   - Molise (2 province)
+2025-05-16 12:55:43,907 - apollo-datautils - INFO - Recuperate 1 province dal database
+2025-05-16 12:55:43,907 - apollo-init-db - INFO -   - P.A. Bolzano (1 province)
+2025-05-16 12:55:44,020 - apollo-datautils - INFO - Recuperate 1 province dal database
+2025-05-16 12:55:44,020 - apollo-init-db - INFO -   - P.A. Trento (1 province)
+2025-05-16 12:55:44,145 - apollo-datautils - INFO - Recuperate 8 province dal database
+2025-05-16 12:55:44,145 - apollo-init-db - INFO -   - Piemonte (8 province)
+2025-05-16 12:55:44,288 - apollo-datautils - INFO - Recuperate 6 province dal database
+2025-05-16 12:55:44,289 - apollo-init-db - INFO -   - Puglia (6 province)
+2025-05-16 12:55:44,396 - apollo-datautils - INFO - Recuperate 5 province dal database
+2025-05-16 12:55:44,396 - apollo-init-db - INFO -   - Sardegna (5 province)
+2025-05-16 12:55:44,529 - apollo-datautils - INFO - Recuperate 9 province dal database
+2025-05-16 12:55:44,529 - apollo-init-db - INFO -   - Sicilia (9 province)
+2025-05-16 12:55:44,641 - apollo-datautils - INFO - Recuperate 10 province dal database
+2025-05-16 12:55:44,642 - apollo-init-db - INFO -   - Toscana (10 province)
+2025-05-16 12:55:44,769 - apollo-datautils - INFO - Recuperate 2 province dal database
+2025-05-16 12:55:44,770 - apollo-init-db - INFO -   - Umbria (2 province)
+2025-05-16 12:55:44,864 - apollo-datautils - INFO - Recuperate 1 province dal database
+2025-05-16 12:55:44,865 - apollo-init-db - INFO -   - Valle d'Aosta (1 province)
+2025-05-16 12:55:44,997 - apollo-datautils - INFO - Recuperate 9 province dal database
+2025-05-16 12:55:44,998 - apollo-init-db - INFO -   - Veneto (9 province)

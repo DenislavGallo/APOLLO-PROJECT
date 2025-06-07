@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="/static/css/led-loader.css">
+    <link rel="stylesheet" href="/static/css/virus-loader.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo - Visualizzazione Predittiva COVID-19</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/scrollbar-modern.css">
+    <!-- Font Awesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container section-scroll">
+        {% include "navbar.html" %}
+
+        <!-- Main content -->
+        <main class="main-content">
+            <div class="sidebar">
+                <div class="stats-card">
+                    <h3>Situazione Italia</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Nuovi Positivi</span>
+                        <span class="stat-value" id="nuovi-positivi">---</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Totale Casi</span>
+                        <span class="stat-value" id="totale-casi">---</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Deceduti</span>
+                        <span class="stat-value" id="deceduti">---</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Guariti</span>
+                        <span class="stat-value" id="guariti">---</span>
+                    </div>
+                </div>
+                
+                <div class="controls-panel">
+                    <h3>Controlli Visualizzazione</h3>
+                    <div class="control-group">
+                        <label for="date-slider">Data:</label>
+                        <input type="range" id="date-slider" min="0" max="100" value="100">
+                        <div id="current-date">--/--/----</div>
+                    </div>
+                    <div class="control-group">
+                        <label>Modalità Visualizzazione:</label>
+                        <div class="toggle-group">
+                            <button class="toggle-btn active" id="real-data">Dati Reali</button>
+                            <button class="toggle-btn" id="predicted-data">Previsioni AI</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label>Indicatore:</label>
+                        <select id="data-indicator">
+                            <option value="nuovi_positivi">Nuovi Positivi</option>
+                            <option value="totale_casi">Totale Casi</option>
+                            <option value="deceduti">Deceduti</option>
+                            <option value="dimessi_guariti">Guariti</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="globe-visualization" class="globe-container"></div>
+            <div id="globe-tooltip" class="tooltip"></div>
+        </main>
+
+        <div class="prediction-details">
+            <h2>Dettagli Previsione</h2>
+            <div class="chart-container">
+                <canvas id="forecast-chart"></canvas>
+            </div>
+            <div class="model-info">
+                <h3>Modello Utilizzato: Prophet</h3>
+                <p>Precisione (MAPE): <span id="model-accuracy">--.--%</span></p>
+                <p>Ultima Previsione: <span id="last-forecast-date">--/--/----</span></p>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+    <!-- Scripts -->
+    <!-- Three.js + OrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="../static/js/getStarfield.js"></script>
+    <script src="../static/js/threeGeoJSON.js"></script>
+    <script src="../static/js/globe.js"></script>
+    <script src="../static/js/data.js"></script>
+    <script src="../static/js/canvas-virus-loader.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

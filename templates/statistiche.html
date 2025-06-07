@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="/static/css/led-loader.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo - Statistiche COVID-19</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/scrollbar-modern.css">
+    <link rel="stylesheet" href="../static/css/restyle-analysis.css">
+    <link rel="stylesheet" href="../static/css/calendar-restyle.css">
+    <!-- Font Awesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container section-scroll">
+        {% include "navbar.html" %}
+
+        <!-- Main content -->
+        <main class="stats-content">
+            <div class="stats-header">
+                <h2><i class="fas fa-chart-pie"></i> Statistiche COVID-19</h2>
+                <p class="subtitle">Analisi dettagliata dell'andamento epidemiologico in Italia</p>
+                
+                <div class="date-range-picker">
+                    <div class="date-input">
+                        <label for="start-date">Data Inizio:</label>
+                        <input type="date" id="start-date" value="2020-02-24">
+                    </div>
+                    <div class="date-input">
+                        <label for="end-date">Data Fine:</label>
+                        <input type="date" id="end-date" value="2025-04-25">
+                    </div>
+                    <button id="update-stats" class="action-button">
+                        <i class="fas fa-filter"></i> Filtra Dati
+                    </button>
+                </div>
+            </div>
+            
+            <div class="stats-dashboard">
+                <!-- Prima riga: Card principali -->
+                <div class="stats-row restyled-metrics">
+    <div class="metric-card total-cases">
+        <div class="metric-icon"><i class="fas fa-virus"></i></div>
+        <div class="metric-info">
+            <h3>Totale Casi</h3>
+            <div class="metric-value" id="total-cases-value">26.964.654</div>
+            <div class="metric-trend" id="total-cases-trend">
+                <i class="fas fa-arrow-up"></i> +0.6% nell'ultimo mese
+            </div>
+        </div>
+    </div>
+    <div class="metric-card active-cases">
+        <div class="metric-icon"><i class="fas fa-procedures"></i></div>
+        <div class="metric-info">
+            <h3>Casi Attivi</h3>
+            <div class="metric-value" id="active-cases-value">390</div>
+            <div class="metric-trend" id="active-cases-trend">
+                <i class="fas fa-arrow-down"></i> -12.4% nell'ultimo mese
+            </div>
+        </div>
+    </div>
+    <div class="metric-card recovered">
+        <div class="metric-icon"><i class="fas fa-heart-pulse"></i></div>
+        <div class="metric-info">
+            <h3>Guariti</h3>
+            <div class="metric-value" id="recovered-value">26.562.666</div>
+            <div class="metric-trend" id="recovered-trend">
+                <i class="fas fa-arrow-up"></i> +0.5% nell'ultimo mese
+            </div>
+        </div>
+    </div>
+    <div class="metric-card deaths">
+        <div class="metric-icon"><i class="fas fa-circle-minus"></i></div>
+        <div class="metric-info">
+            <h3>Deceduti</h3>
+            <div class="metric-value" id="deaths-value">198.683</div>
+            <div class="metric-trend" id="deaths-trend">
+                <i class="fas fa-equals"></i> +0.1% nell'ultimo mese
+            </div>
+        </div>
+    </div>
+    <div class="metric-card mape">
+        <div class="metric-icon"><i class="fas fa-bullseye"></i></div>
+        <div class="metric-info">
+            <h3>Precisione MAPE</h3>
+            <div class="metric-value" id="mape-value">--</div>
+            <div class="metric-trend" id="mape-trend">(ultimi 7 giorni)</div>
+        </div>
+    </div>
+</div>
+<!-- Restyling CSS custom: vedi style.css/charts-fix.css o aggiungi qui -->
+<style>
+.restyled-metrics {
+    display: flex;
+    gap: 2.2rem;
+    margin-bottom: 2.2rem;
+}
+.metric-card {
+    background: linear-gradient(135deg, #23283a 60%, #1a1f2b 100%);
+    box-shadow: 0 4px 24px #3894ff22;
+    border-radius: 16px;
+    padding: 2.2rem 1.7rem 1.7rem 1.7rem;
+    min-width: 220px;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+.metric-card:hover {
+    box-shadow: 0 8px 32px #56d36444;
+}
+.metric-icon {
+    font-size: 2.8rem;
+    margin-bottom: 0.7rem;
+    color: #3894ff;
+    filter: drop-shadow(0 0 8px #3894ff66);
+}
+.metric-card.recovered .metric-icon { color: #56d364; }
+.metric-card.deaths .metric-icon { color: #a259c6; }
+.metric-card.active-cases .metric-icon { color: #3dd6d0; }
+.metric-card.total-cases .metric-icon { color: #ff6f61; }
+.metric-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color: #fff;
+}
+.metric-value {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.metric-trend {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0.2rem;
+    padding: 0.25rem 0.8rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #222b36;
+    color: #fff;
+}
+.charts-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.2rem;
+    margin-bottom: 2.2rem;
+}
+.chart-card {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 49%;
+    background: linear-gradient(135deg, #23283a 60%, #1a1f2b 100%);
+    box-shadow: 0 4px 24px #3894ff22;
+    border-radius: 16px;
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.chart-card.empty-card {
+    background: transparent;
+    box-shadow: none;
+    pointer-events: none;
+}
+@media (max-width: 900px) {
+    .charts-row {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .chart-card, .chart-card.empty-card {
+        max-width: 100%;
+    }
+}
+</style>
+                
+                <!-- Seconda e terza riga: Grafici principali e supplementari, sempre 2 per riga -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <h3><i class="fas fa-chart-line"></i> Andamento Nuovi Positivi</h3>
+                        <div class="chart-container">
+                            <canvas id="new-cases-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3><i class="fas fa-chart-area"></i> Andamento Casi Attivi</h3>
+                        <div class="chart-container">
+                            <canvas id="active-cases-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <h3><i class="fas fa-hospital"></i> Ospedalizzazioni</h3>
+                        <div class="chart-container">
+                            <canvas id="hospitalization-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3><i class="fas fa-skull-crossbones"></i> Decessi nel tempo</h3>
+                        <div class="chart-container">
+                            <canvas id="deaths-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <h3><i class="fas fa-heart-pulse"></i> Guariti nel tempo</h3>
+                        <div class="chart-container">
+                            <canvas id="recovered-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card empty-card"></div>
+                </div>
+            </div>
+            
+            <div class="analysis-row restyled-analysis">
+  <div class="analysis-card">
+    <div class="analysis-header">
+      <i class="fas fa-robot"></i>
+      <h3>Analisi Algoritmica</h3>
+    </div>
+    <div class="analysis-body">
+      <p>
+        L'analisi dei dati COVID-19 in Italia mostra un <strong>trend di stabilizzazione</strong> con la diffusione del virus ora contenuta rispetto ai picchi precedenti. I modelli matematici indicano:
+      </p>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> <strong>Riduzione significativa</strong> della velocità di trasmissione</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Stabilizzazione</strong> del numero di casi attivi</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Pressione ospedaliera</strong> in costante diminuzione</li>
+      </ul>
+      <p>L'implementazione delle strategie di contenimento e la campagna vaccinale hanno contribuito significativamente a questo risultato.</p>
+    </div>
+  </div>
+  <div class="analysis-chart-card">
+    <canvas id="r-value-chart" class="fullsize-rt-chart"></canvas>
+    <div class="chart-caption">Valore R<sub>t</sub> (Indice di trasmissibilità) – Ultimi 12 mesi</div>
+  </div>
+</div>
+
+        </main>
+
+        {% include "footer.html" %}
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2/dist/chartjs-plugin-annotation.min.js"></script>
+    <script src="../static/js/data.js"></script>
+    <script src="../static/js/statistics.js"></script>
+</body>
+</html>

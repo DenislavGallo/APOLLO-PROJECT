@@ -1,0 +1,225 @@
+# Tesina di Maturità - Apollo Project
+
+## Titolo
+**Apollo Project - Analisi, Previsione e Visualizzazione dell'Epidemia COVID-19 in Italia**
+
+---
+
+### Introduzione
+L’emergenza sanitaria dovuta al COVID-19 ha messo in luce quanto sia fondamentale disporre di strumenti informatici avanzati per l’analisi, la previsione e la comunicazione dei dati epidemiologici. Da questa consapevolezza nasce Apollo Project: una piattaforma web interattiva che si propone di rendere accessibile a tutti – cittadini, studenti, ricercatori e decisori – la comprensione dell’andamento dell’epidemia, attraverso la potenza dei dati, della visualizzazione moderna e dell’intelligenza artificiale.
+
+Apollo Project non si limita a mostrare semplici grafici, ma integra un modello predittivo avanzato e una visualizzazione geospaziale 3D, offrendo una panoramica dinamica e intuitiva sull’evoluzione della pandemia. Il progetto rappresenta una sintesi tra le competenze acquisite in informatica, matematica, statistica e comunicazione digitale durante il percorso scolastico.
+
+---
+
+### Contesto e Motivazioni
+Durante la pandemia, l’informazione tempestiva e la capacità di prevedere scenari futuri sono diventati strumenti essenziali per la gestione della crisi. Tuttavia, la complessità dei dati e la scarsità di strumenti intuitivi hanno spesso reso difficile la comprensione dell’andamento reale dell’epidemia. Apollo Project nasce per rispondere a queste esigenze: fornire uno strumento trasparente, affidabile e facile da usare, che unisca rigore scientifico e accessibilità.
+
+---
+
+### Obiettivi e Requisiti
+Gli obiettivi principali di Apollo Project sono:
+- Analizzare i dati storici ufficiali relativi all’andamento del COVID-19 in Italia, garantendo la qualità e l’integrità delle fonti.
+- Offrire previsioni affidabili sull’evoluzione dei principali indicatori (nuovi positivi, decessi, guariti, ecc.) tramite modelli statistici di ultima generazione.
+- Visualizzare i dati in modo chiaro, interattivo e innovativo, grazie a grafici dinamici e a una mappa 3D del globo.
+- Garantire la robustezza, la sicurezza e la validazione degli input nelle API esposte.
+- Consentire l’automazione dei test e la verifica della qualità del software.
+
+---
+
+### Architettura del Progetto
+Apollo Project è strutturato in modo modulare e segue le migliori pratiche di sviluppo software:
+
+- **Backend:**  
+  Realizzato in Python con il framework Flask, gestisce le API REST, l’elaborazione dei dati, la validazione degli input e il logging avanzato. Il backend è progettato per essere sicuro, facilmente estendibile e performante grazie a sistemi di caching e gestione degli errori.
+  
+- **Modello Predittivo:**  
+  Il cuore del sistema di previsione è Prophet, una libreria open source sviluppata da Facebook, ottimizzata per la modellazione di serie temporali. Il modello viene addestrato sui dati storici e genera previsioni per i giorni futuri, con intervalli di confidenza e metriche di accuratezza (MAPE).
+  
+- **Frontend:**  
+  L’interfaccia utente è sviluppata con HTML5, CSS3 e JavaScript moderno. La visualizzazione dei dati avviene tramite grafici interattivi (Chart.js) e un globo 3D realizzato con Three.js, che permette di esplorare la diffusione del virus a livello globale in modo immersivo.
+  
+- **Testing:**  
+  La qualità del software è garantita da test automatici (Pytest) che coprono sia i casi standard che quelli di errore, assicurando la robustezza delle API e la correttezza dei risultati.
+
+---
+
+### Funzionalità Principali
+Apollo Project offre una serie di funzionalità avanzate:
+
+- **Visualizzazione dei dati storici:**  
+  L’utente può esplorare l’andamento dei principali indicatori epidemiologici nel tempo, con grafici intuitivi e filtri personalizzabili.
+
+- **Previsioni future:**  
+  Il sistema genera previsioni fino a 30 giorni per ciascun indicatore, mostrando anche l’incertezza tramite intervalli di confidenza. Le previsioni sono calcolate in tempo reale e aggiornate periodicamente.
+
+- **Valutazione dell’accuratezza:**  
+  La piattaforma calcola la MAPE (Mean Absolute Percentage Error) per valutare la bontà delle previsioni, offrendo trasparenza e affidabilità.
+
+- **Globo 3D interattivo:**  
+  Una delle innovazioni principali è la mappa tridimensionale, dove i dati vengono proiettati su un globo virtuale. I punti rossi rappresentano i paesi colpiti, con tooltip dettagliati che appaiono esattamente sotto il cursore, senza offset, per una migliore esperienza utente. L’offset di -25° in longitudine garantisce il corretto allineamento tra punti e texture.
+
+- **API robuste e sicure:**  
+  Tutte le API validano i parametri ricevuti e restituiscono errori chiari in caso di input non valido. La gestione degli errori è centralizzata e nessuna informazione sensibile viene mai esposta.
+
+---
+
+### Sicurezza e Validazione
+La sicurezza è un aspetto centrale del progetto. Ogni endpoint API implementa controlli rigorosi sui parametri ricevuti, prevenendo attacchi comuni come injection o accesso non autorizzato. Gli errori vengono gestiti in modo sicuro e restituiti all’utente con messaggi chiari e mai tecnici. Il logging avanzato permette di tracciare eventuali anomalie senza esporre dati sensibili.
+
+---
+
+### Testing e Qualità
+Il progetto è accompagnato da una suite di test automatici che verifica il corretto funzionamento di tutte le API, compresi i casi limite (es. dati mancanti, modello Prophet non disponibile, input non validi). Questo garantisce affidabilità e facilita la manutenzione futura. Il logging dettagliato aiuta nel debug e nella risoluzione rapida dei problemi.
+
+---
+
+### Esperienza Utente e Accessibilità
+L’interfaccia di Apollo Project è stata progettata per essere semplice, intuitiva e accessibile. Il design responsive assicura una fruizione ottimale sia su desktop che su dispositivi mobili. Particolare attenzione è stata posta all’accessibilità: i colori sono scelti per garantire il contrasto, i tooltip sono posizionati in modo preciso e l’interazione è fluida anche da tastiera. I messaggi di errore sono sempre chiari e mai invasivi.
+
+---
+
+### Scelte Tecniche e Innovazioni
+- **Offset globo 3D:**  
+  Per garantire il corretto allineamento dei punti sulla texture del globo, è stato introdotto un offset di -25° in longitudine. Questa scelta, frutto di test empirici, permette una rappresentazione fedele dei dati geografici.
+
+- **Serializzazione dei dati:**  
+  Tutte le risposte delle API sono serializzate in formato JSON, garantendo compatibilità e sicurezza. Particolare attenzione è stata posta affinché i dati restituiti siano sempre validi e facilmente interpretabili dal frontend.
+
+- **Gestione degli errori:**  
+  Un handler globale centralizza la gestione delle eccezioni, restituendo sempre errori strutturati e mai stacktrace o dettagli tecnici all’utente finale.
+
+---
+
+### Risultati e Conclusioni
+Apollo Project ha rappresentato una sfida stimolante e formativa, permettendomi di approfondire tematiche avanzate come la data science, il machine learning, lo sviluppo web full-stack e la sicurezza informatica. Il risultato è una piattaforma robusta, sicura e facilmente estendibile, che dimostra l’importanza della qualità del software e della collaborazione tra discipline diverse. Il lavoro di testing e validazione ha garantito affidabilità anche in condizioni di errore, mentre l’attenzione all’esperienza utente ha reso la piattaforma accessibile a un pubblico ampio.
+
+---
+
+### Sviluppi Futuri
+Il progetto Apollo è pensato per essere facilmente estendibile. Tra i possibili sviluppi futuri si includono:
+- Integrazione di dati regionali e internazionali per una visione ancora più completa.
+- Miglioramento dei modelli predittivi, ad esempio tramite reti neurali o modelli ensemble.
+- Dashboard personalizzabili per utenti avanzati.
+- Ulteriore automazione dei test e integrazione continua (CI/CD).
+- Aggiunta di funzionalità di esportazione dati e reportistica avanzata.
+
+---
+
+### Riferimenti
+- **Dati:** Dipartimento della Protezione Civile  
+- **Prophet:** https://facebook.github.io/prophet/  
+- **Flask:** https://flask.palletsprojects.com/  
+- **Pytest:** https://docs.pytest.org/  
+- **Three.js:** https://threejs.org/  
+- **Chart.js:** https://www.chartjs.org/  
+
+---
+
+### Documentazione API Principali
+
+#### 1. `/api/data/historical`
+- **Metodo:** GET
+- **Descrizione:** Restituisce i dati storici usati per l’addestramento del modello Prophet.
+- **Parametri:**
+  - `country` (opzionale): codice paese (es. ITA)
+- **Risposta:**
+```json
+[
+  {"data": "2020-03-01", "nuovi_positivi": 100, ...},
+  ...
+]
+```
+
+#### 2. `/api/data/forecast`
+- **Metodo:** GET
+- **Descrizione:** Restituisce le previsioni future generate dal modello Prophet.
+- **Parametri:**
+  - `country` (opzionale): codice paese
+- **Risposta:**
+```json
+{
+  "nuovi_positivi": [120, 130, ...],
+  "nuovi_positivi_lower": [...],
+  "nuovi_positivi_upper": [...],
+  ...
+}
+```
+
+#### 3. `/api/data/latest`
+- **Metodo:** GET
+- **Descrizione:** Restituisce i dati più recenti (ultimi 30 giorni).
+- **Parametri:**
+  - `country` (opzionale)
+- **Risposta:**
+```json
+[
+  {"data": "2021-05-01", "nuovi_positivi": 80, ...},
+  ...
+]
+```
+
+#### 4. `/api/data/globe`
+- **Metodo:** GET
+- **Descrizione:** Restituisce i dati aggregati per la visualizzazione sul globo 3D.
+- **Risposta:**
+```json
+[
+  {"country": "ITA", "lat": 41.9, "lon": 12.5, "cases": 100000, ...},
+  ...
+]
+```
+
+#### 5. `/api/model/mape`
+- **Metodo:** GET
+- **Descrizione:** Restituisce la MAPE per l’indicatore e il paese selezionato.
+- **Parametri:**
+  - `indicator`: stringa (es. "nuovi_positivi")
+  - `country`: stringa (es. "ITA")
+  - `days`: intero (opzionale)
+- **Risposta:**
+```json
+{"mape": 7.45}
+```
+
+---
+
+### Diagramma Architetturale (Descrizione)
+
+Il progetto Apollo Project segue un’architettura a livelli ben separati:
+
+- **Frontend:**
+  - L’utente interagisce tramite browser con una dashboard moderna, che comunica con il backend solo tramite chiamate API REST.
+  - Le visualizzazioni includono grafici dinamici e un globo 3D interattivo.
+
+- **Backend (Flask):**
+  - Riceve le richieste dal frontend, valida i parametri, elabora i dati e restituisce risposte in formato JSON.
+  - Gestisce la logica di business, la sicurezza e il logging.
+
+- **Modello Predittivo (Prophet):**
+  - Addestra i modelli sui dati storici e genera previsioni, che vengono poi servite tramite le API.
+
+- **Database/Dataset:**
+  - I dati ufficiali vengono caricati da file CSV aggiornati periodicamente.
+
+- **Testing:**
+  - Una suite di test automatici verifica la correttezza e la robustezza delle API.
+
+**Schema logico (testuale):**
+
+```
+[Utente] ⇄ [Frontend (JS/HTML)] ⇄ [API Flask] ⇄ [Prophet Model] ⇄ [Dati CSV]
+                                           ⇄ [Testing]
+```
+
+Per una rappresentazione grafica, è possibile utilizzare strumenti come draw.io seguendo lo schema sopra descritto.
+
+---
+**Allegati**
+- Codice sorgente Apollo Project
+- Screenshot dell'applicazione
+- Esempi di output delle API e dei test
+
+---
+
+*Redatta da [Tuo Nome], anno scolastico 2024/2025*

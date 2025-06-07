@@ -1,0 +1,46 @@
+/* Loader LED Moderno */
+.led-loader {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 10, 25, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+}
+.led-loader.led-active {
+  opacity: 1;
+  pointer-events: all;
+}
+.neon-svg-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.neon-svg-loader svg {
+  display: block;
+  width: 120px;
+  height: 60px;
+  filter: drop-shadow(0 0 18px #00fff6) drop-shadow(0 0 30px #62abff);
+  background: none;
+}
+
+.led-text {
+  color: #0ff;
+  font-family: 'Poppins', 'Inter', 'Montserrat', Arial, sans-serif;
+  font-size: 1.5rem;
+  margin-top: 28px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #0ff, 0 0 16px #00f8;
+  font-weight: 500;
+}
+.slider-error {
+  box-shadow: 0 0 12px 2px #f00, 0 0 32px 0 #f00a;
+  border-color: #f00 !important;
+}

@@ -1,0 +1,172 @@
+/* Modern, glassy, animated forecast table restyling */
+#forecast-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(18, 24, 38, 0.7);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    backdrop-filter: blur(8px);
+    margin-bottom: 2.5rem;
+    font-size: 1.08rem;
+    transition: box-shadow 0.3s;
+    /* Aggiunta del bordo e ombra effetto neon/glass */
+    border: 1.5px solid #3894ff55;
+    box-shadow: 0 0 24px 0 #3894ff33, 0 2px 16px 0 #3894ff18, 0 8px 32px 0 rgba(31, 38, 135, 0.25); /* Combinato con l'ombra originale */
+}
+
+#forecast-table thead {
+    background: linear-gradient(90deg, #3894ff 0%, #4bc0c0 100%);
+} /* Chiusura mancante aggiunta */
+
+#forecast-table th {
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem 0.7rem;
+    border-bottom: 2px solid #2c3140;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 2px 8px #3894ff44; /* Combinato con text-shadow neon */
+} /* Chiusura corretta (era già presente ma la struttura era sbagliata) */
+
+#forecast-table tbody tr {
+    transition: background 0.2s, box-shadow 0.2s;
+    /* Rimosso border-radius qui, di solito non si applica a <tr> ma a <td> o all'intera tabella */
+} /* Chiusura corretta */
+
+#forecast-table tbody tr:hover {
+    background: rgba(56, 148, 255, 0.09);
+    box-shadow: 0 2px 12px rgba(56, 148, 255, 0.08);
+} /* Chiusura corretta */
+
+#forecast-table td {
+    color: #e6edf3;
+    padding: 0.85rem 0.7rem;
+    border-bottom: 1px solid #23283a;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.04rem;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s; /* Transizione aggiunta qui */
+} /* Chiusura corretta */
+
+#forecast-table tbody tr:last-child td {
+    border-bottom: none;
+} /* Chiusura corretta */
+
+#forecast-table td.positive {
+    position: relative; /* Utile per posizionare pseudo-elementi o tooltip */
+    color: var(--green-highlight, #56d364);
+    font-weight: 500;
+} /* Chiusura corretta */
+
+#forecast-table td.negative {
+    color: var(--red-highlight, #f85149);
+    font-weight: 500;
+    position: relative; /* Aggiunto per coerenza se necessario */
+} /* Chiusura corretta */
+
+
+/* Skeleton Loader per tabella */
+.skeleton-row td { /* Applica lo skeleton alle celle della riga */
+    background: linear-gradient(90deg, #23283a 25%, #2c3140 50%, #23283a 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.2s infinite linear;
+    color: transparent !important; /* Nasconde il testo reale */
+    border-radius: 4px; /* Arrotonda l'effetto skeleton */
+    height: 1.5em; /* Altezza fissa per l'effetto */
+    display: block; /* Necessario per applicare altezza e margini */
+    margin: 0.5em 0; /* Spaziatura */
+} /* Chiusura corretta */
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; } /* Chiusura mancante aggiunta */
+    100% { background-position: -200% 0; } /* Chiusura mancante aggiunta */
+} /* Chiusura mancante per @keyframes aggiunta */
+
+/* Badge trend up/down */
+.badge-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 0.95em;
+    font-weight: 600;
+    padding: 0.15em 0.6em;
+    border-radius: 1em;
+    background: linear-gradient(90deg, #23283a 60%, #3894ff33 100%);
+    color: #56d364; /* Colore default per trend 'up' */
+    box-shadow: 0 1px 4px #3894ff33;
+    margin-left: 0.5em;
+    transition: background 0.2s, color 0.2s;
+} /* Chiusura corretta */
+
+.badge-trend.down {
+    color: #f85149;
+    background: linear-gradient(90deg, #23283a 60%, #f8514933 100%);
+    box-shadow: 0 1px 4px #f8514933; /* Ombra coerente con il colore */
+} /* Chiusura mancante aggiunta */
+
+/* Highlight dinamico sulle celle positive/negative */
+.td-highlight-up {
+    background: rgba(86, 211, 100, 0.13) !important;
+    box-shadow: 0 0 6px 0 #56d36455;
+    animation: highlight-up 0.9s;
+} /* Chiusura corretta */
+
+@keyframes highlight-up {
+    0% { background: rgba(86, 211, 100, 0.35); } /* Chiusura mancante aggiunta */
+    100% { background: rgba(86, 211, 100, 0.13); } /* Chiusura mancante aggiunta */
+} /* Chiusura mancante per @keyframes aggiunta */
+
+.td-highlight-down {
+    background: rgba(248, 81, 73, 0.13) !important;
+    box-shadow: 0 0 6px 0 #f8514955;
+    animation: highlight-down 0.9s;
+} /* Chiusura corretta */
+
+@keyframes highlight-down {
+    0% { background: rgba(248, 81, 73, 0.35); } /* Chiusura mancante aggiunta */
+    100% { background: rgba(248, 81, 73, 0.13); } /* Chiusura mancante aggiunta */
+} /* Chiusura mancante per @keyframes aggiunta */
+
+/* Tooltip moderno per celle */
+.table-tooltip {
+    position: absolute;
+    z-index: 99;
+    background: rgba(35, 40, 58, 0.97);
+    color: #fff;
+    padding: 0.6em 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px #3894ff44;
+    font-size: 1.02em;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s;
+    white-space: nowrap; /* Evita che il tooltip vada a capo */
+} /* Chiusura corretta */
+
+.table-tooltip.active {
+    opacity: 1;
+} /* Chiusura corretta */
+
+/* Stili Neon/glass già incorporati sopra in #forecast-table e #forecast-table th */
+
+/* Responsive migliorato */
+@media (max-width: 700px) {
+    #forecast-table {
+        font-size: 0.97rem; /* Applica alla tabella per ereditarietà */
+    }
+    #forecast-table th,
+    #forecast-table td {
+        padding: 0.55rem 0.3rem;
+        font-size: 0.97rem; /* Ridefinito per specificità */
+    }
+} /* Chiusura mancante per media query 700px aggiunta */
+
+@media (max-width: 500px) {
+    #forecast-table th,
+    #forecast-table td {
+        font-size: 0.91rem;
+        padding: 0.38rem 0.15rem;
+    }
+     /* Eventuali altri aggiustamenti per schermi molto piccoli */
+} /* Chiusura mancante per media query 500px aggiunta */
